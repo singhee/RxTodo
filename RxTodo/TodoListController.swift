@@ -15,12 +15,16 @@ class TodoListController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.taskField.rx.text.bind(to: viewModel.memoText).disposed(by: disposeBag)
-        
         self.viewModel.taskList.bind(to: tableView.rx.items) { tableView, row, element in
             let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell")!
             cell.textLabel?.text = element
             return cell
-        }.disposed(by: disposeBag)
+            }.disposed(by: disposeBag)
+        
+        self.taskField.rx.text.bind(to: viewModel.memoText).disposed(by: disposeBag)
+        
+        self.taskAddButton.rx.tap.subscribe(onNext: {
+            self.viewModel.addTask()
+        }).disposed(by: disposeBag)
     }
 }
