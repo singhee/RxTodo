@@ -12,7 +12,9 @@ struct TodoModel {
     func rx_getTodoList() -> Observable<[String]> {
         return Observable.create { observer in
             let handle = self.ref.child("list").observe(.value, with: { snapshot in
-                observer.onNext(snapshot.children.flatMap { $0 as? String })
+                observer.onNext(snapshot.children
+                    .flatMap { $0 as? FIRDataSnapshot }
+                    .flatMap { $0.value as? String })
             })
             return Disposables.create {
                 self.ref.removeObserver(withHandle: handle)
