@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5C0F83C11EC49E95001C31CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C0F83C01EC49E95001C31CD /* GoogleService-Info.plist */; };
+		5C9505E41ECAF88F00C8794E /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9505E31ECAF88F00C8794E /* SwiftyJSON.framework */; };
+		5C9505E51ECAF88F00C8794E /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9505E31ECAF88F00C8794E /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5C9505E71ECAF9E500C8794E /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9505E61ECAF9E500C8794E /* TaskCell.swift */; };
 		5C9A34441EC5805C00B5CA2E /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C9A34431EC5805C00B5CA2E /* TodoModel.swift */; };
 		5CA7507A1EC4144700EE3A06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA750791EC4144700EE3A06 /* AppDelegate.swift */; };
 		5CA7507F1EC4144700EE3A06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CA7507D1EC4144700EE3A06 /* Main.storyboard */; };
@@ -30,6 +33,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5C9505E51ECAF88F00C8794E /* SwiftyJSON.framework in Embed Frameworks */,
 				5CA750911EC4167B00EE3A06 /* RxCocoa.framework in Embed Frameworks */,
 				5CA7508D1EC4167200EE3A06 /* RxDataSources.framework in Embed Frameworks */,
 				5CA750941EC4167F00EE3A06 /* RxSwift.framework in Embed Frameworks */,
@@ -41,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		5C0F83C01EC49E95001C31CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5C9505E31ECAF88F00C8794E /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		5C9505E61ECAF9E500C8794E /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		5C9A34431EC5805C00B5CA2E /* TodoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		5CA750761EC4144700EE3A06 /* RxTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CA750791EC4144700EE3A06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +72,7 @@
 				5CA7508C1EC4167200EE3A06 /* RxDataSources.framework in Frameworks */,
 				5CA750931EC4167F00EE3A06 /* RxSwift.framework in Frameworks */,
 				AA9A3C826EDC3C9E4DC091AC /* Pods_RxTodo.framework in Frameworks */,
+				5C9505E41ECAF88F00C8794E /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +91,7 @@
 		5CA7506D1EC4144600EE3A06 = {
 			isa = PBXGroup;
 			children = (
+				5C9505E31ECAF88F00C8794E /* SwiftyJSON.framework */,
 				5CA750921EC4167F00EE3A06 /* RxSwift.framework */,
 				5CA7508F1EC4167B00EE3A06 /* RxCocoa.framework */,
 				5CA7508B1EC4167200EE3A06 /* RxDataSources.framework */,
@@ -113,6 +121,7 @@
 				5CA750971EC41C9D00EE3A06 /* TodoViewModel.swift */,
 				5CA750991EC41CCB00EE3A06 /* TodoListController.swift */,
 				5C9A34431EC5805C00B5CA2E /* TodoModel.swift */,
+				5C9505E61ECAF9E500C8794E /* TaskCell.swift */,
 			);
 			path = RxTodo;
 			sourceTree = "<group>";
@@ -254,6 +263,7 @@
 				5CA750981EC41C9D00EE3A06 /* TodoViewModel.swift in Sources */,
 				5C9A34441EC5805C00B5CA2E /* TodoModel.swift in Sources */,
 				5CA7507A1EC4144700EE3A06 /* AppDelegate.swift in Sources */,
+				5C9505E71ECAF9E500C8794E /* TaskCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

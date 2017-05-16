@@ -1,5 +1,6 @@
 import UIKit
 import RxSwift
+import SwiftyJSON
 import RxCocoa
 import RxDataSources
 
@@ -16,8 +17,8 @@ class TodoListController: UIViewController {
         super.viewDidLoad()
         
         self.viewModel.taskList.bind(to: tableView.rx.items) { tableView, row, element in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell")!
-            cell.textLabel?.text = element
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") as! TaskCell
+            cell.updateUI(taskModel: element)
             return cell
             }.disposed(by: disposeBag)
         
@@ -25,6 +26,14 @@ class TodoListController: UIViewController {
         
         self.taskAddButton.rx.tap.subscribe(onNext: {
             self.viewModel.addTask()
+            self.taskField.text = ""
+        }).disposed(by: disposeBag)
+        
+        self.tableView.rx.itemDeleted.subscribe(onNext: { indexPath in
+            let cell = self.tableView.cellForRow(at: indexPath) as! TaskCell
+            if let key = cell.key {
+                self.viewModel.deleteTask(key: key)
+            }
         }).disposed(by: disposeBag)
     }
 }
